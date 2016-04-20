@@ -10,7 +10,10 @@
     <Grid>
         <lc:TileLayoutControl>
             <lc:Tile Size="Small" dxwuin:Navigation.NavigateTo="View1">
-                <TextBlock Text="View 1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <DockPanel LastChildFill="True">
+                    <TextBlock Margin="5" DockPanel.Dock="Bottom" Text="View 1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Source="Images/Home-64.png"/>                    
+                </DockPanel>
             </lc:Tile>
             <lc:Tile Size="Small" dxwuin:Navigation.NavigateTo="View2">
                 <TextBlock Text="View 2" HorizontalAlignment="Center" VerticalAlignment="Center"/>

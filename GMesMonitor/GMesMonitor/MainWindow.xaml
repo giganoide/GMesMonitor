@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
         x:Class="GMesMonitor.MainWindow"
         mc:Ignorable="d ignore"
         Height="768"
@@ -15,6 +16,7 @@
         Title="MVVM Light Application" 
         WindowStartupLocation="CenterScreen"
         FontSize="24"
+        dxc:ThemeManager.ThemeName="Office2013"
         >
 
     <Window.Resources>
