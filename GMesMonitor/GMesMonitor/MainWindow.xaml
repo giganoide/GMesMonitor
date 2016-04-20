@@ -1,15 +1,22 @@
-﻿<Window x:Class="GMesMonitor.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gmm="clr-namespace:GMesMonitor.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        x:Class="GMesMonitor.MainWindow"
         mc:Ignorable="d ignore"
-        Height="300"
-        Width="300"
-        Title="MVVM Light Application"
-        DataContext="{Binding Main, Source={StaticResource Locator}}">
-    
+        Height="768"
+        Width="1024"
+        MinHeight="768"
+        MinWidth="1024"
+        Title="MVVM Light Application" 
+        WindowStartupLocation="CenterScreen"
+        FontSize="24"
+        >
+
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -18,15 +25,59 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid x:Name="LayoutRoot">
+    <Window.DataContext>
+        <Binding Path="Main" Source="{StaticResource Locator}"/>
+    </Window.DataContext>
 
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding WelcomeTitle}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top" Height="100" Orientation="Horizontal">
+            <!--<gmm:ImageButton Height="100" Image="Images/Home-64.png" Content="Home" />
+            <gmm:ImageButton Height="100" Image="Images/Resource-64.png" Content="Resource" />
+            <gmm:ImageButton Height="100" Image="Images/Employee-64.png" Content="Employee" />
+            <gmm:ImageButton Height="100" Image="Images/Order-64.png" Content="Order" />
+            <gmm:ImageButton Height="100" Image="Images/Phase-64.png" Content="Phase" />
+            <gmm:ImageButton Height="100" Image="Images/Exit-64.png" Content="Exit" />-->
 
-    </Grid>
+            <dx:SimpleButton Width="100" Glyph="Images/Home-64.png" />
+            <dx:SimpleButton Width="100" Glyph="Images/Resource-64.png" />
+            <dx:SimpleButton Width="100" Glyph="Images/Employee-64.png" />
+            <dx:SimpleButton Width="100" Glyph="Images/Order-64.png" />
+            <dx:SimpleButton Width="100" Glyph="Images/Phase-64.png" />
+            <dx:SimpleButton Width="100" Glyph="Images/Exit-64.png" HorizontalAlignment="Right" />
+        </StackPanel>
+
+        <DockPanel LastChildFill="True" DockPanel.Dock="Right" Width="300"  Margin="5">
+            <Border DockPanel.Dock="Top" Height="40" Background="ForestGreen">
+                <TextBlock Text="Utilities" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <UniformGrid Columns="1" Margin="5">
+                <dx:SimpleButton Content="Presenze" />
+                <dx:SimpleButton Content="Rettifica avanzamento" />
+                <dx:SimpleButton Content="Squadre" />
+                <dx:SimpleButton Content="Dichiarazioni multiple" />
+                <dx:SimpleButton Content="Passaggio consegne" />
+            </UniformGrid>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True" DockPanel.Dock="Left" Margin="5">
+            <Border DockPanel.Dock="Top" Height="40" Background="ForestGreen">
+                <TextBlock Text="Commands" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <UniformGrid Columns="2" Margin="5">
+                <dx:SimpleButton Content="P.P.P" />
+                <dx:SimpleButton Content="Preparazione" />
+                <dx:SimpleButton Content="Lavorazione" />
+                <dx:SimpleButton Content="Versamento" />
+                <dx:SimpleButton Content="Fermo" />
+                <dx:SimpleButton Content="Sospensione" />
+                <dx:SimpleButton Content="Fine" />
+                <dx:SimpleButton Content="Manutenzione" />
+                <dx:SimpleButton Content="Avanzamaneto manuale" />
+                <dx:SimpleButton Content="Scarico manuale" />
+                <dx:SimpleButton Content="Manuale su risorsa" />
+                <dx:SimpleButton Content="Attività indiretta" />
+            </UniformGrid>
+        </DockPanel>
+    </DockPanel>
 </Window>
+    

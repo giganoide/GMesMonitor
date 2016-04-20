@@ -6,12 +6,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:ignore="http://www.galasoft.ch/ignore"
              StartupUri="MainWindow.xaml"
-             mc:Ignorable="d ignore">
+             mc:Ignorable="d ignore" Startup="OnAppStartup_UpdateThemeName">
     
     <Application.Resources>
         <!--Global View Model Locator-->
-        <vm:ViewModelLocator x:Key="Locator"
-                             d:IsDataSource="True" />
+        <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
     </Application.Resources>
     
 </Application>
